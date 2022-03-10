@@ -7,16 +7,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController  {
     var numberSkrini: Float = 0
     var firstNum: Float = 0
     var mustSing: Bool = false
     var operation: Int = 0
+    
     @IBOutlet weak var result: UILabel!
     
+
+    
     @IBAction func number(_ sender: UIButton) {
-        
-        if mustSing == true {
+    if mustSing == true {
             result.text = String(sender.tag)
             mustSing = false
         } else {
@@ -25,6 +27,7 @@ class ViewController: UIViewController {
         
         numberSkrini = Float(result.text!)!
     }
+    
     
     @IBAction func buttons(_ sender: UIButton) {
         if result.text != "" && sender.tag != 16  && sender.tag != 11 {
@@ -66,7 +69,4 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-
-
-
+}
