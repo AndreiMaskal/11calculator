@@ -15,20 +15,21 @@ class ViewController: UIViewController  {
     
     @IBOutlet weak var result: UILabel!
     
-
-    
     @IBAction func number(_ sender: UIButton) {
-    if mustSing == true {
+        if mustSing == true {
             result.text = String(sender.tag)
             mustSing = false
         } else {
             result.text = result.text! + String(sender.tag)
         }
         
-        numberSkrini = Float(result.text!)!
+        numberSkrini = Float(result.text ?? "") ?? 0
     }
-    
-    
+    @IBAction func croup(_ sender: UIButton) {
+        if mustSing == false {
+            result.text = (result.text!) + "."
+        }
+    }
     @IBAction func buttons(_ sender: UIButton) {
         if result.text != "" && sender.tag != 16  && sender.tag != 11 {
             firstNum = Float(result.text ?? "") ?? 0
@@ -57,16 +58,9 @@ class ViewController: UIViewController  {
             numberSkrini = 0
             operation = 0
         }
+        
         mustSing = true
         operation = sender.tag
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 }
+hghghghhg
