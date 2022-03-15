@@ -57,6 +57,7 @@ class ViewController: UIViewController  {
             firstNum = 0
             numberSkrini = 0
             operation = 0
+            result.text = (result.text ?? "") + "0"
         }
         
         mustSing = true
