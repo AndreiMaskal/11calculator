@@ -7,13 +7,13 @@
 import UIKit
 
 class ViewController: UIViewController  {
-    var numberSkrini: Float = 0
-    var firstNum: Float = 0
-    var mustSing: Bool = true
-    var operation: Int = 0
-    var firstEkran = false
-    var croup = false
-    var currentInput: Float {
+    private var numberSkrini: Float = 0
+    private var firstNum: Float = 0
+    private var mustSing: Bool = true
+    private var operation: Int = 0
+    private var firstEkran = false
+    private var croup = false
+    private var currentInput: Float {
         get {
             return Float(result.text ?? "") ?? 0
         }
