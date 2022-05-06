@@ -19,9 +19,9 @@ class ViewController: UIViewController  {
         }
         set {
             let value = "\(newValue)"
-            let valueArray = value.components(separatedBy:".")
-            if valueArray[1] == "0" {
-                result.text = "\(valueArray[0])"
+            let valueArray = value.components(separatedBy: ".")
+            if valueArray.last == "0" {
+                result.text = "\(valueArray.first ?? "")"
             } else {
                 result.text = "\(newValue)"
             }
@@ -83,7 +83,7 @@ class ViewController: UIViewController  {
             } else if operation == 15 {
                 currentInput = firstNum / numberSkrini
                 if numberSkrini == 0 {
-                    result.text = "error"
+                    result.text = "нельзя блять на 0"
                 }
             }
         } else if sender.tag == 11 {
