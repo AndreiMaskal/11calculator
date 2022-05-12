@@ -32,7 +32,7 @@ class ViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        result.text = "0"
+        result.text = "Hi user - click button"
     }
     
     @IBAction func number(_ sender: UIButton) {
@@ -83,7 +83,7 @@ class ViewController: UIViewController  {
             } else if operation == 15 {
                 currentInput = firstNum / numberSkrini
                 if numberSkrini == 0 {
-                    result.text = "нельзя блять на 0"
+                    result.text = "error"
                 }
             }
         } else if sender.tag == 11 {
@@ -93,10 +93,19 @@ class ViewController: UIViewController  {
             operation = 0
             result.text = (result.text ?? "") + "0"
         }
+        
         mustSing = true
         croup = true
         operation = sender.tag
         
     }
+    
+    @IBAction func procent(_ sender: UIButton) {
+        if sender.tag == 20 {
+            currentInput = firstNum/100
+        }
+        
+    }
+    
 }
 
