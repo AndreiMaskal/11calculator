@@ -82,9 +82,10 @@ class ViewController: UIViewController  {
                 currentInput = firstNum * numberSkrini
             } else if operation == 15 {
                 currentInput = firstNum / numberSkrini
-                if numberSkrini == 0 {
-                    result.text = "error"
+                guard numberSkrini == 0 else {
+                    return
                 }
+                result.text = "error"
             }
         } else if sender.tag == 11 {
             result.text = " "
@@ -101,11 +102,10 @@ class ViewController: UIViewController  {
     }
     
     @IBAction func procent(_ sender: UIButton) {
-        if sender.tag == 20 {
-            currentInput = firstNum/100
+        guard sender.tag == 20 else {
+            return
         }
+        currentInput = firstNum/100
         
     }
-    
 }
-
