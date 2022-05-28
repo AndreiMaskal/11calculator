@@ -262,7 +262,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="XTk-8f-nMd">
-                                <rect key="frame" x="1" y="143" width="412" height="100"/>
+                                <rect key="frame" x="1" y="142.5" width="412" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Iss-cP-2Ej"/>
                                 </constraints>
