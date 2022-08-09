@@ -19,9 +19,9 @@ class ViewController: UIViewController  {
         }
         set {
             let value = "\(newValue)"
-            let valueArray = value.components(separatedBy:".")
-            if valueArray[1] == "0" {
-                result.text = "\(valueArray[0])"
+            let valueArray = value.components(separatedBy: ".")
+            if valueArray.last == "0" {
+                result.text = "\(valueArray.first ?? "")"
             } else {
                 result.text = "\(newValue)"
             }
@@ -32,7 +32,7 @@ class ViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        result.text = "0"
+        result.text = "Hi user - click button"
     }
     
     @IBAction func number(_ sender: UIButton) {
@@ -82,9 +82,10 @@ class ViewController: UIViewController  {
                 currentInput = firstNum * numberSkrini
             } else if operation == 15 {
                 currentInput = firstNum / numberSkrini
-                if numberSkrini == 0 {
-                    result.text = "error"
+                guard numberSkrini == 0 else {
+                    return
                 }
+                result.text = "error"
             }
         } else if sender.tag == 11 {
             result.text = " "
@@ -93,10 +94,18 @@ class ViewController: UIViewController  {
             operation = 0
             result.text = (result.text ?? "") + "0"
         }
+        
         mustSing = true
         croup = true
         operation = sender.tag
         
     }
+    
+    @IBAction func procent(_ sender: UIButton) {
+        guard sender.tag == 20 else {
+            return
+        }
+        currentInput = firstNum/100
+        
+    }
 }
-
